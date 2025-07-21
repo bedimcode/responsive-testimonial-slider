@@ -1,0 +1,40 @@
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 300px){
+   .testimonial{
+      &__title{
+         font-size: 1.25rem;
+      }
+      &__card{
+         width: 240px;
+         padding-inline: 1rem;
+      }
+   }
+}
+
+/* For medium devices */
+@media screen and (min-width: 640px){
+   .testimonial__swiper{
+      max-width: 640px;
+   }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px){
+   .testimonial{
+      &__swiper{
+         max-width: 760px;
+      }
+      &__title{
+         margin-bottom: 4rem;
+      }
+      &__card{
+         width: 330px;
+         padding: 3rem 2rem 4rem;
+         border-radius: 2rem;
+      }
+      &__number{
+         font-size: var(--normal-font-size);
+      }
+   }
+}

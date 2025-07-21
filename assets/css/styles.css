@@ -1,0 +1,206 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Unbounded:wght@600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(265, 75%, 48%);
+  --second-color: hsl(18, 88%, 58%);
+  --title-color: hsl(220, 20%, 8%);
+  --text-color: hsl(220, 8%, 35%);
+  --white-color: hsl(0, 0%, 100%);
+  --body-color: hsl(220, 4%, 99%);
+  --container-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Unbounded", sans-serif;
+  --h1-font-size: 1.5rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--second-font);
+  color: var(--title-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*=============== TESTIMONIAL CARD ===============*/
+.testimonial {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.testimonial__swiper {
+  padding-bottom: 7rem;
+}
+
+.testimonial__title {
+  font-size: var(--h1-font-size);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonial__card {
+  width: 280px;
+  background-color: var(--container-color);
+  box-shadow: 0 8px 16px hsla(265, 75%, 4%, .1);
+  padding: 2rem 1.5rem 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.testimonial__img {
+  width: 100px;
+  border-radius: 4rem;
+  border: 4px solid var(--first-color);
+  margin: 0 auto .5rem;
+}
+
+.testimonial__name {
+  font-size: var(--h3-font-size);
+  margin-bottom: 2rem;
+}
+
+.testimonial__rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  margin-bottom: .75rem;
+}
+
+.testimonial__stars {
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.testimonial__stars i {
+  font-size: 1rem;
+  color: var(--second-color);
+}
+
+.testimonial__number {
+  font-size: var(--h3-font-size);
+}
+
+/* Swiper class */
+.testimonial .swiper-pagination-bullets {
+  bottom: 4rem;
+}
+
+.testimonial .swiper-pagination-bullet {
+  background-color: var(--first-color);
+  transition: opacity .4s;
+}
+
+.testimonial .swiper-button-prev {
+  left: calc(50% - 3rem);
+}
+
+.testimonial .swiper-button-next {
+  right: calc(50% - 3rem);
+}
+
+.testimonial .swiper-button-prev::after, 
+.testimonial .swiper-button-next::after {
+  content: "";
+}
+
+.testimonial :is(.swiper-button-prev, .swiper-button-next) {
+  top: initial;
+  bottom: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 300px) {
+  .testimonial__title {
+    font-size: 1.25rem;
+  }
+  .testimonial__card {
+    width: 240px;
+    padding-inline: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 640px) {
+  .testimonial__swiper {
+    max-width: 640px;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .testimonial__swiper {
+    max-width: 760px;
+  }
+  .testimonial__title {
+    margin-bottom: 4rem;
+  }
+  .testimonial__card {
+    width: 330px;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+  }
+  .testimonial__number {
+    font-size: var(--normal-font-size);
+  }
+}
