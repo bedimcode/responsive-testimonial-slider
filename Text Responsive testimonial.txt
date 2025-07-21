@@ -1,0 +1,17 @@
+========== TESTIMONIAL CARD ==========
+.testimonial__title
+WHAT <br> CUSTOMERS SAY
+
+.testimonial__name
+Damyz Julz
+Taylor Carter
+Rina Ownel
+Jhon Patel
+
+.testimonial__number
+5.0
+
+.testimonial__description
+The company offers many easy-to-use services, 
+with hard work and round-the-clock support 
+on all projects.
